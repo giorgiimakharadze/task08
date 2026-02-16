@@ -74,9 +74,3 @@ variable "agent_cpu" {
   description = "CPU cores for the build agent"
   default     = 2
 }
-
-variable "enable_task_schedule" {
-  type        = bool
-  description = "Enable task schedule to run immediately"
-  default     = false
-}
