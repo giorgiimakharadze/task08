@@ -30,6 +30,5 @@ resource "azurerm_container_registry_task" "acr_task" {
 }
 
 resource "azurerm_container_registry_task_schedule_run_now" "schedule" {
-  count                      = var.enable_task_schedule ? 1 : 0
   container_registry_task_id = azurerm_container_registry_task.acr_task.id
 }
