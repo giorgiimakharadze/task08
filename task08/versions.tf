@@ -10,9 +10,30 @@ terraform {
       source  = "hashicorp/random"
       version = ">= 3.5.0, < 4.0.0"
     }
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = ">= 1.14.0"
+    }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">= 2.23.0"
+    }
   }
 }
 
 provider "azurerm" {
   features {}
+}
+
+provider "kubectl" {
+  host                   = module.aks.kube_config[0].host
+  cluster_ca_certificate = base64decode(module.aks.kube_config[0].cluster_ca_certificate)
+  token                  = module.aks.kube_config[0].token
+  load_config_file       = false
+}
+
+provider "kubernetes" {
+  host                   = module.aks.kube_config[0].host
+  cluster_ca_certificate = base64decode(module.aks.kube_config[0].cluster_ca_certificate)
+  token                  = module.aks.kube_config[0].token
 }
