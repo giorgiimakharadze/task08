@@ -143,8 +143,12 @@ resource "kubectl_manifest" "deployment" {
   wait_for {
     field {
       key   = "status.readyReplicas"
-      value = 1
+      value = "1"
     }
+  }
+
+  timeouts {
+    create = "10m"
   }
 
   depends_on = [kubectl_manifest.secret_provider]
