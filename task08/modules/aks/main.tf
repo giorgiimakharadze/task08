@@ -16,8 +16,11 @@ resource "azurerm_kubernetes_cluster" "aks" {
     type = "SystemAssigned"
   }
 
-  key_management_service {
-    key_vault_key_id = var.key_vault_key_id
+  dynamic "key_management_service" {
+    for_each = var.key_vault_key_id != null ? [1] : []
+    content {
+      key_vault_key_id = var.key_vault_key_id
+    }
   }
 
   storage_profile {
