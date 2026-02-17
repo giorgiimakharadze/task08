@@ -83,10 +83,11 @@ module "aks" {
 module "aci" {
   source = "./modules/aci"
 
-  name     = local.aci_name
-  location = var.location
-  rg_name  = azurerm_resource_group.rg.name
-  sku      = var.aci_sku
+  name           = local.aci_name
+  location       = var.location
+  rg_name        = azurerm_resource_group.rg.name
+  sku            = var.aci_sku
+  dns_name_label = local.aci_name
 
   acr_login_server   = module.acr.acr_login_server
   acr_admin_username = module.acr.acr_admin_username
