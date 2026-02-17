@@ -28,3 +28,9 @@ output "fqdn" {
   value       = azurerm_kubernetes_cluster.aks.fqdn
   description = "AKS cluster FQDN"
 }
+
+output "kube_config_structured" {
+  value       = azurerm_kubernetes_cluster.aks.kube_config
+  description = "Structured Kubernetes configuration for provider setup"
+  sensitive   = true
+}
