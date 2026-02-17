@@ -26,21 +26,8 @@ resource "azurerm_container_group" "aci" {
       }
     }
 
-    dynamic "environment_variables" {
-      for_each = var.environment_variables
-      content {
-        name  = environment_variables.key
-        value = environment_variables.value
-      }
-    }
-
-    dynamic "secure_environment_variables" {
-      for_each = var.secure_environment_variables
-      content {
-        name  = secure_environment_variables.key
-        value = secure_environment_variables.value
-      }
-    }
+    environment_variables        = var.environment_variables
+    secure_environment_variables = var.secure_environment_variables
   }
 
   tags = var.tags

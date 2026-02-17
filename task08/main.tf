@@ -162,7 +162,7 @@ resource "kubectl_manifest" "service" {
   depends_on = [kubectl_manifest.deployment]
 }
 
-data "kubernetes_service" "app_service" {
+data "kubernetes_service_v1" "app_service" {
   metadata {
     name = "redis-flask-app-service"
   }
