@@ -77,3 +77,9 @@ variable "key_vault_id" {
   type        = string
   description = "Key Vault ID for access policy"
 }
+
+variable "os_disk_size_gb" {
+  type        = number
+  description = "OS disk size in GB"
+  default     = 30
+}

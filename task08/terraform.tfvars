@@ -25,7 +25,8 @@ acr_context_path = "https://github.com/giorgiimakharadze/task08.git#main:task08/
 aci_sku = "Standard"
 
 # Azure Kubernetes Service
-aks_node_pool_name      = "system"
-aks_node_pool_count     = 1
-aks_node_pool_size      = "Standard_D2ads_v6"
-aks_node_pool_disk_type = "Ephemeral"
+aks_node_pool_name         = "system"
+aks_node_pool_count        = 1
+aks_node_pool_size         = "Standard_D2ads_v6"
+aks_node_pool_disk_type    = "Ephemeral"
+aks_node_pool_disk_size_gb = 75

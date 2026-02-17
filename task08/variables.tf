@@ -122,3 +122,9 @@ variable "key_vault_key_id" {
   description = "Key Vault Key ID for AKS encryption"
   default     = null
 }
+
+variable "aks_node_pool_disk_size_gb" {
+  type        = number
+  description = "AKS default node pool os disk size in GB"
+  default     = 30
+}
