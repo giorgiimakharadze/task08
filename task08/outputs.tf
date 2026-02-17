@@ -52,7 +52,7 @@ output "redis_ssl_port" {
   description = "Redis SSL port (6380)"
 }
 
-output "k8s_loadbalancer_ip" {
+output "aks_lb_ip" {
   value       = try(data.kubernetes_service.app_service.status[0].load_balancer[0].ingress[0].ip, "pending")
-  description = "Kubernetes LoadBalancer IP address"
+  description = "Load Balancer IP address of APP in AKS"
 }
