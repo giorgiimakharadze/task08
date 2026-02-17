@@ -24,6 +24,10 @@ resource "azurerm_kubernetes_cluster" "aks" {
     }
   }
 
+  key_vault_secrets_provider {
+    secret_rotation_enabled = true
+  }
+
   storage_profile {
     blob_driver_enabled = var.blob_driver_enabled
     disk_driver_enabled = var.disk_driver_enabled
