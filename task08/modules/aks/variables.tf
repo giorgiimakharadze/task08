@@ -28,6 +28,12 @@ variable "node_size" {
   description = "Node size"
 }
 
+variable "os_disk_type" {
+  type        = string
+  description = "OS disk type for the default node pool"
+  default     = "Managed"
+}
+
 variable "tags" {
   type        = map(string)
   description = "Tags"

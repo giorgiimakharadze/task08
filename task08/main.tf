@@ -63,9 +63,10 @@ module "aks" {
   resource_group_name = azurerm_resource_group.rg.name
   dns_prefix          = "${local.aks_name}-dns"
 
-  node_name  = var.aks_node_pool_name
-  node_count = var.aks_node_pool_count
-  node_size  = var.aks_node_pool_size
+  node_name    = var.aks_node_pool_name
+  node_count   = var.aks_node_pool_count
+  node_size    = var.aks_node_pool_size
+  os_disk_type = var.aks_node_pool_disk_type
 
   acr_id           = module.acr.id
   key_vault_id     = module.keyvault.id
