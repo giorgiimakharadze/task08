@@ -17,8 +17,9 @@ redis_hostname    = "redis-hostname"
 keyvault_sku = "standard"
 
 # Azure Container Registry
-acr_sku    = "Basic"
-image_name = "cmtr-2lfxdvp4-mod8-app"
+acr_sku          = "Basic"
+image_name       = "cmtr-2lfxdvp4-mod8-app"
+acr_context_path = "https://github.com/giorgiimakharadze/task08.git#main:task08/application"
 
 # Azure Container Instance
 aci_sku = "Standard"
