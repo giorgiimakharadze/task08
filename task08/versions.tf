@@ -28,8 +28,7 @@ provider "azurerm" {
 provider "kubectl" {
   host                   = module.aks.kube_config_structured[0].host
   cluster_ca_certificate = base64decode(module.aks.kube_config_structured[0].cluster_ca_certificate)
-  client_certificate     = base64decode(module.aks.kube_config_structured[0].client_certificate)
-  client_key             = base64decode(module.aks.kube_config_structured[0].client_key)
+  token                  = module.aks.kube_config_structured[0].password
   load_config_file       = false
 }
 
