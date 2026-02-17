@@ -80,9 +80,9 @@ variable "acr_context_path" {
   description = "Git repository URL for ACR task context"
 }
 
-variable "acr_context_access_token" {
+variable "git_pat" {
   type        = string
-  description = "Access token for ACR task context (GitHub PAT or Azure DevOps PAT)"
+  description = "Personal access token for the repository where the source code is located"
   sensitive   = true
   default     = null
 }

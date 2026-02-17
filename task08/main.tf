@@ -30,7 +30,7 @@ module "acr" {
   task_name            = "${local.acr_name}-build-task"
   task_platform_os     = "Linux"
   context_path         = var.acr_context_path
-  context_access_token = var.acr_context_access_token
+  context_access_token = var.git_pat
   image_names          = ["${local.acr_name}.azurecr.io/${var.image_name}:${var.image_tag}"]
 
   tags = var.tags
