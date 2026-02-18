@@ -148,7 +148,7 @@ resource "kubectl_manifest" "deployment" {
   }
 
   timeouts {
-    create = "10m"
+    create = "20m"
   }
 
   depends_on = [kubectl_manifest.secret_provider]
