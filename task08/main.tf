@@ -159,8 +159,9 @@ resource "kubectl_manifest" "service" {
 
   wait_for {
     field {
-      key   = "status.loadBalancer.ingress.0.ip"
-      value = "regex:^\\d+\\.\\d+\\.\\d+\\.\\d+$"
+      key        = "status.loadBalancer.ingress.[0].ip"
+      value      = "^(\\d+(\\.|$)){4}"
+      value_type = "regex"
     }
   }
 
