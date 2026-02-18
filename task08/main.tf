@@ -142,7 +142,7 @@ resource "kubectl_manifest" "deployment" {
 
   wait_for {
     field {
-      key   = "status.readyReplicas"
+      key   = "status.availableReplicas"
       value = "1"
     }
   }
