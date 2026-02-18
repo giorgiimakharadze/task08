@@ -123,7 +123,7 @@ module "aci" {
 
 resource "kubectl_manifest" "secret_provider" {
   yaml_body = templatefile("${path.module}/k8s-manifests/secret-provider.yaml.tftpl", {
-    aks_kv_access_identity_id  = module.aks.kubelet_identity_object_id
+    aks_kv_access_identity_id  = module.aks.kubelet_identity_client_id
     kv_name                    = module.keyvault.name
     redis_url_secret_name      = var.redis_hostname
     redis_password_secret_name = var.redis_primary_key
